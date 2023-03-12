@@ -12,19 +12,25 @@ namespace EmployeeWage
             int halfDayHour = 4;
             Random rnd = new Random();
             int check= rnd.Next(0,3);
-    
-            if (check == 0) 
+
+
+            switch (check)
             {
-                Console.WriteLine("employee is not present");
+            
+             case 0:
+                    Console.WriteLine("employee is not present");
+                    break;
+             case 1:
+                    Console.WriteLine($"employee is present for half day\ndaily wage of employee is {perHourWage * halfDayHour}");
+
+                    break;
+             case 2:
+                    Console.WriteLine($"employee is present for half day\ndaily wage of employee is {perHourWage*fullDayHour}");
+
+                    break;
+
             }
-            if (check == 1)
-            {
-                Console.WriteLine($"employee is present for half day\ndaily wage of employee is {perHourWage*halfDayHour}");
-            }
-            else
-            {
-                Console.WriteLine($"employee is present for half day\ndaily wage of employee is {perHourWage*fullDayHour}");
-            }
+          
         }
     }
 }
