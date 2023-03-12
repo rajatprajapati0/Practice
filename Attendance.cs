@@ -10,40 +10,45 @@ namespace EmployeeWage
         public const int halfDayHour = 1;
         public const int workingDay = 20;
         public const int maxHour = 100;
-     
-        public void  CheckAttendance()
+
+        static int emphour = 0;
+        static int totalEmpHour = 0;
+        static int monthlyWage = 0;
+        static int totalDay = 0;
+
+        public static int GetWorkingHopur(int rnd) 
         {
-            int emphour = 0;
-            int totalEmpHour = 0;
-            int monthlyWage = 0;
-            int totalDay = 0;
-           
-       
-            Random rnd = new Random();
-            while (totalEmpHour <= maxHour&&totalDay<workingDay)
+            switch (rnd)
+            {
+                case halfDayHour:
+                    emphour = 4;
+                    break;
+                case fullDayHour:
+                    emphour = 8;
+                    break;
+                default:
+                    emphour = 0;
+                    break;
+            }
+             return emphour;
+        }
+
+        public static void ComputEmployeeWage() 
+        {
+            while (totalEmpHour < maxHour && totalDay < workingDay)
             {
                 totalDay++;
-                int check = rnd.Next(0, 3);
+                Random rnd = new Random();
 
-                switch (check)
-                {
-                    case halfDayHour:
-                        emphour = 4;
-                        break;
-                    case fullDayHour:
-                        emphour = 8;
-                        break;
-                    default:
-                        emphour = 0;
-                        break;
+                int random =GetWorkingHopur( rnd.Next(0,3));
 
-                }
-                totalEmpHour += emphour;
-                
+                totalEmpHour = totalEmpHour+random;
             }
-            monthlyWage =  totalEmpHour*perHourWage;
+            monthlyWage = totalEmpHour * perHourWage;
 
-            Console.WriteLine($"monthly wage :{monthlyWage}");        
+            Console.WriteLine($"monthly wage :{monthlyWage}");
         }
     }
+       
+    
 }

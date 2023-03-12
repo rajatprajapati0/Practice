@@ -7,10 +7,7 @@ namespace EmployeeWage
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome TO Employewage Computation Program");
-            
-            Attendance attendance = new Attendance();
-            attendance.CheckAttendance();
-
+            Attendance.ComputEmployeeWage();
         }
     }
 }
