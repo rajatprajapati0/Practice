@@ -8,9 +8,14 @@ namespace EmployeeWage
         {
             Console.WriteLine("Welcome TO Employewage Computation Program");
            // (string Compny, int perHourWage, int workingDay, int maxHour)
-            Attendance.EmployeeWagweCompute("Tata",30,24,120);
+            Attendance Tata=new Attendance("Tata",30,24,120);
+            Tata.EmployeeWagweCompute();
+            Attendance rakuten=new Attendance("Rakuten", 30, 24, 120);
+            rakuten.EmployeeWagweCompute();
+            Console.WriteLine( Tata.ToString());
+            Console.WriteLine(rakuten.ToString());
 
-            Attendance.EmployeeWagweCompute("Rakuten", 30, 24, 120);
+
         }
     }
 }
