@@ -7,22 +7,19 @@ namespace EmployeeWage
     {
         public void  CheckAttendance()
         {
-          Random rnd = new Random();
-          int check= rnd.Next(0,2);
-
+            int perHourWage = 20;
+            int perDayHour = 8;
+            Random rnd = new Random();
+            int check= rnd.Next(0,2);
+    
             if (check == 0) 
             {
                 Console.WriteLine("employee is not present");
-
             }
             else
             {
-                Console.WriteLine("employee is present");
-
+                Console.WriteLine($"employee is present \ndaily wage of employee is {perHourWage*perDayHour}");
             }
-
-
         }
-
     }
 }
